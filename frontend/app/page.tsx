@@ -1,3 +1,4 @@
+"use client";
 import Footer from "@/components/core/footer/page";
 import Blog from "@/components/ui/blog/page";
 import Featured from "@/components/ui/featured/page";
