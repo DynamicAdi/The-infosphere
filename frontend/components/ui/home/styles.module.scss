@@ -10,16 +10,17 @@
     .upperSection {
         width: 97%;
         border-radius: $sm;
-        height: 10%;
+        height: 8%;
         @include flex(space-between, center);
+        // background-color: red;
         @include media(mobile) {
             height: 18%;
             flex-direction: column;
             gap: 1%;
         } 
         .logo {
-            width: 20%;
-            height: 100%;
+            width: 15%;
+            height: 70%;
             @include media(mobile) {
                 width: 100%;
                 height: 55%;
@@ -34,10 +35,10 @@
 
         .headlines {
                 width: 60%;
-                height: 100%;
-                background-color: rgba($color: $primary, $alpha: 0.8);
+                height: 60%;
+                background-color: rgba($color: $primary, $alpha: 1.0);
                 @include flex();
-                border-radius: $sm;
+                border-radius: $lg;
                 position: relative;
                 @include media(mobile) {
                     width: 100%;
@@ -48,13 +49,13 @@
                 .title {
                     position: absolute;
                     inset: 0;
-                    width: 18%;
-                    border-radius: $sm 0 0 $sm;
+                    width: 28%;
+                    border-radius: $lg 0 0 $lg;
                     height: 100%;
-                    background-color: rgba($color: $secondary, $alpha: 0.6);
+                    background-color: rgba($color: $secondary, $alpha: 0.5);
                     backdrop-filter: blur(6px);
+                    @include flex();
                     z-index: 10;
-                    padding: 0.8%;
                     @include media(mobile) {
                        display: none;
                     }
@@ -69,7 +70,7 @@
         }
     }
     .child {
-        @include fullRatio(97%, 85%);
+        @include fullRatio(97%, 88%);
         border-radius: $sm;
         overflow: hidden;
         position: relative;

@@ -1,19 +1,21 @@
-import Footer from "@/components/core/footer/page";
-import MoreNews from "@/components/ui/images/page";
-import Blog from "@/components/ui/blog/page";
-import Featured from "@/components/ui/featured/page";
-import HomeSection from "@/components/ui/home/page";
-import React from "react";
+import Loader from "@/components/core/loader/page";
+import React, { lazy, Suspense } from "react";
+import dynamic from "next/dynamic";
 
+const HomeSection = dynamic(() => import('@/components/ui/home/page'), {ssr: true})
+const Blog = dynamic(() => import('@/components/ui/blog/page'), {ssr: true})
+const Featured = dynamic(() => import('@/components/ui/featured/page'), {ssr: true})
+const MoreNews = dynamic(() => import('@/components/ui/images/page'), {ssr: true})
+const Footer = dynamic(() => import('@/components/core/footer/page'), {ssr: false})
 
 export default async function Home() {  
   return (
-    <>
+    <Suspense fallback={<Loader />}>
       <HomeSection />
       <Blog />
       <Featured />
       <MoreNews />
       <Footer />
-    </>
+    </Suspense>
   );
 }

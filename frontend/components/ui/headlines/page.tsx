@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./styles.module.scss";
+import Link from "next/link";
 
 const ScrollingHeadlines = () => {
   const headlines = [
@@ -14,14 +15,18 @@ const ScrollingHeadlines = () => {
 <div className={styles.scrolling_container}>
       <div className={styles.scrolling_content}>
         {headlines.map((headline, index) => (
-          <span key={index} className={styles.headline}>
+        // <Link href={'/news'} key={index}>
+        <Link href={'/news'} key={index} className={styles.headline}>
             {headline}
-          </span>
+          </Link>
+        // </Link>
         ))}
         {headlines.map((headline, index) => (
-          <span key={index + headlines.length} className={styles.headline}>
+        // <Link href={'/news'} key={index}>
+          <Link href={'/news'} key={index + headlines.length} className={styles.headline}>
             {headline}
-          </span>
+          </Link>
+        // </Link>
         ))}
       </div>
     </div>

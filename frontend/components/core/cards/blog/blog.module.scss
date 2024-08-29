@@ -5,10 +5,10 @@
     height: 25rem;
     cursor: pointer;
     // background: $white;
-    box-shadow: 0px 0px 30px #14141425;
+    box-shadow: 0px 0px 20px #14141420;
     border-radius: 12px;
     @include flex(space-between, flex-start, column);
-    padding: 1%;
+    padding: 0.7%;
     border: 1px solid transparent;
     transition: 0.3s all ease;
     background-color: white;

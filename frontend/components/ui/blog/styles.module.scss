@@ -9,7 +9,23 @@
         height: auto;
     }
     .left, .right {
-        
+        .header { 
+            @include flex(space-between);
+            a {
+                text-decoration: none;
+                color: black;
+                @include flex();
+                gap: 0.5rem;
+                transition: 0.3s all ease-in-out;
+                &:hover {
+                    transform: scale(0.9);
+                    color: $primary;
+                }
+                p {
+                    font-size: 1.5rem;
+                }
+            }
+        }
         .title {
                 // padding: 1%;
                 padding-left: 10%;

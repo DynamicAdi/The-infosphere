@@ -3,6 +3,7 @@
 .container {
   overflow-x: hidden; // - gd
   @include fullScreen($h: auto);
+  // padding-bottom: 2%;
   .title {
     margin-top: 0.5%;
     padding-left: 8%;

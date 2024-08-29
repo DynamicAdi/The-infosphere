@@ -5,6 +5,8 @@
   cursor: grab;
     background-color: transparent;
     border: 0px solid transparent;
+    padding: 2% 1%;
+    padding-bottom: 0;
     @include media(mobile) {
       padding: 0% 6%;
     }

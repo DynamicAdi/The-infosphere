@@ -1,0 +1,53 @@
+@import '../../../ui/scss/global';
+
+
+.context {
+    width: 24%;
+    height: 18rem;
+    @include flex(space-between, flex-start, column);
+    cursor: pointer;
+
+    &:hover {
+        .product {
+            .image {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+    @include media(mobile) {
+        width: 100%;
+        align-items: center;
+        gap: 2rem;
+    }
+    .product {
+        width: 100%;
+        height: 100%;
+        @include flex(flex-start, flex-start, column);
+        gap: 1.8%;
+        .image {
+            width: 100%;
+            height: 70%;
+            overflow: hidden;
+            border-radius: $sm;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                background-position: center center;
+                border-radius: $sm;
+                transition: 0.4s all ease;
+            }
+        }
+        .text {
+            text-align: left;
+            padding: 0.2rem 0px 0px 0px;
+            padding-bottom: 0px;
+            h1 {
+                font-size: 1.5rem;
+                font-weight: 500;
+            }
+        }
+    }
+}

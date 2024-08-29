@@ -1,18 +1,25 @@
 @import "../../ui/scss/global";
 
 .footer {
-  background-color: $primary;
+  background-color: $secondary;
   color: white;
   padding: 20px;
-  height: 20rem;
-  @include flex();
+  height: 21rem;
+  @include flex($fd: column);
   gap: 0.1rem;
   @include media(mobile) {
     flex-direction: column;
     height: auto;
-    // justify-content: flex-start;
-    // align-items: flex-start;
-    // padding-left: 10%;
+  }
+  .png {
+    width: 4rem;
+    height: 4rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50px;
+    }
   }
   .box {
     width: 50%;
@@ -23,9 +30,11 @@
     }
     a {
         text-decoration: none;
+        // text-align: center;
         .logo {
-            font-size: 4rem;
+            font-size: 3rem;
             font-weight: bold;
+            // text-align: center;
             color: white;
             @include media(mobile) {
               font-size: 2.5rem;
@@ -61,6 +70,7 @@
           transition: 0.3s all ease;
           cursor: pointer;
           color: white;
+          background: white;
           &:nth-child(1) {
             color: #206aff;
           }
@@ -76,7 +86,6 @@
 
           &:hover {
             transform: scale(0.9);
-            background: white;
           }
         }
       }
