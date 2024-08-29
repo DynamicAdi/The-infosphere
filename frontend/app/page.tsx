@@ -1,5 +1,5 @@
-"use client";
 import Footer from "@/components/core/footer/page";
+import MoreNews from "@/components/ui/images/page";
 import Blog from "@/components/ui/blog/page";
 import Featured from "@/components/ui/featured/page";
 import HomeSection from "@/components/ui/home/page";
@@ -12,6 +12,7 @@ export default async function Home() {
       <HomeSection />
       <Blog />
       <Featured />
+      <MoreNews />
       <Footer />
     </>
   );

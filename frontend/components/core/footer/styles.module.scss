@@ -1,7 +1,8 @@
 @import "../../ui/scss/global";
 
 .footer {
-  background-color: #f1f1f1;
+  background-color: $primary;
+  color: white;
   padding: 20px;
   height: 20rem;
   @include flex();
@@ -25,7 +26,7 @@
         .logo {
             font-size: 4rem;
             font-weight: bold;
-            color: $black;
+            color: white;
             @include media(mobile) {
               font-size: 2.5rem;
               text-align: center;

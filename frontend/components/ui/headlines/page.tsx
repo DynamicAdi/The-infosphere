@@ -11,7 +11,7 @@ const ScrollingHeadlines = () => {
   ];
 
   return (
-    <div className={styles.scrolling_container}>
+<div className={styles.scrolling_container}>
       <div className={styles.scrolling_content}>
         {headlines.map((headline, index) => (
           <span key={index} className={styles.headline}>
