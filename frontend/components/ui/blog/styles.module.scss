@@ -1,0 +1,90 @@
+@import '../scss/global';
+
+
+.container {
+    @include fullScreen();
+    @include flex(space-between, flex-start);
+    @include media(mobile) {
+        flex-direction: column;
+        height: auto;
+    }
+    .left, .right {
+        
+        .title {
+                // padding: 1%;
+                padding-left: 10%;
+                position: relative;
+                width: fit-content;
+                font-size: 2.5rem;
+                line-height: 100%;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 45%;
+                    left: -10%;
+                    width: 35%;
+                    height: 10%;
+                    background: #000;
+                    @include media(mobile) {
+                        width: 20%;
+                    }
+                }
+        }
+        .child {
+            margin-top: 2%;
+            width: 100%;
+            height: 90%;
+            @include flex(flex-start, flex-start);
+            gap: 4rem;
+            row-gap: 2rem;
+            overflow-y: scroll;
+            scrollbar-width: none;
+            padding: 1%;
+            @include media(mobile) {
+                // background-color: black;
+                @include flex();
+                height: auto;
+            }
+            &.col {
+                margin-top: 5%;
+                gap: 1rem;
+            }
+        }
+    }
+    .right {
+        .title {
+
+            &::before {
+                top: 50%;
+                left: 105%;
+                width: 30%;
+                @include media(mobile) {
+                    top: 45%;
+                    left: -10%;
+                    width: 20%;
+                }
+                // background-color: orange;
+            }
+        }
+    }
+    .left {
+        width: 70%;
+        height: 100%;
+        // background-color: red;
+        padding: 2%;
+        @include media(mobile) {
+            width: 100%;
+        }
+
+    }
+    .right {
+        width: 30%;
+        height: 100%;
+        // background-color: blue;
+        padding: 2% 1%;
+        @include media(mobile) {
+            width: 100%;
+        }
+
+    }
+}

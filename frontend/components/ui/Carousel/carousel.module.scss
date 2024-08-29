@@ -1,0 +1,12 @@
+@import "../../ui/scss/global";
+
+.slider {
+  width: 100%;
+  cursor: grab;
+    background-color: transparent;
+    border: 0px solid transparent;
+  // padding: 1% 2%;
+  &:active {
+    cursor: grabbing;
+  }
+}

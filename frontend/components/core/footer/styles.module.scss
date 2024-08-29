@@ -1,0 +1,84 @@
+@import "../../ui/scss/global";
+
+.footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  height: 20rem;
+  @include flex();
+  gap: 0.1rem;
+  @include media(mobile) {
+    flex-direction: column;
+    height: auto;
+    // justify-content: flex-start;
+    // align-items: flex-start;
+    // padding-left: 10%;
+  }
+  .box {
+    width: 50%;
+    height: 20%;
+    @include flex();
+    @include media(mobile) {
+      width: 100%;
+    }
+    a {
+        text-decoration: none;
+        .logo {
+            font-size: 4rem;
+            font-weight: bold;
+            color: $black;
+            @include media(mobile) {
+              font-size: 2.5rem;
+              text-align: center;
+            }
+        }
+    }
+    &.social {
+      ul {
+        @include flex();
+        gap: 20px;
+        list-style: none;
+        @include media(mobile) {
+          // @include flex(flex-start, flex-start, column);
+          gap: 15px;
+        }
+        li {
+            font-size: 1.2rem;
+          cursor: pointer;
+          transition: 0.3s all ease;
+          &:hover {
+            color: $primary;
+            margin-top: -5px;
+            transform: scale(0.9);
+        }
+        }
+
+        .links {
+          @include flex();
+          border-radius: 50px;
+          padding: 0.6rem;
+          font-size: 35px;
+          transition: 0.3s all ease;
+          cursor: pointer;
+          color: white;
+          &:nth-child(1) {
+            color: #206aff;
+          }
+          &:nth-child(2) {
+            color: deeppink;
+          }
+          &:nth-child(3) {
+            color: black;
+          }
+          &:nth-child(4) {
+            color: red;
+          }
+
+          &:hover {
+            transform: scale(0.9);
+            background: white;
+          }
+        }
+      }
+    }
+  }
+}
