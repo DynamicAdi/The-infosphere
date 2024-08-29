@@ -6,6 +6,7 @@
     height: 100%;
     transition: opacity 0.5s ease-in-out;
     opacity: 0;
+    z-index: -2;
   
   &.fade_in {
     transition: opacity 0.5s ease-in-out;

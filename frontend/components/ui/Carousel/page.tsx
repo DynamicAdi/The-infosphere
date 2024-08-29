@@ -1,10 +1,7 @@
-"use client";
-
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { IoArrowBackSharp, IoArrowForwardSharp } from "react-icons/io5";
 import styles from "./carousel.module.scss";
 
 interface CarouselProps {

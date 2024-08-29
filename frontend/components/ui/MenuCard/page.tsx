@@ -1,5 +1,3 @@
-"use client"
-
 import React, { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
 import {IoIosArrowRoundForward} from 'react-icons/io'
@@ -17,7 +15,7 @@ const items = ["Item 1", "Item 2", "Item 3", "Item 4"];
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
         setFade(true); // Start fade in
-      }, 600); // Duration of the fade out transition
+      }, 500); // Duration of the fade out transition
     }, 3000); // 3 seconds interval
 
     return () => clearInterval(intervalId); // Cleanup on component unmount

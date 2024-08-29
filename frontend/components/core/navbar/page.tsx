@@ -1,6 +1,4 @@
-"use client"
-
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styles from './styles.module.scss';
 import {MdClose, MdOutlineSegment} from 'react-icons/md';
 import ScrollingHeadlines from '@/components/ui/headlines/page';
