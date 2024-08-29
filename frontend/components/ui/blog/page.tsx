@@ -8,7 +8,7 @@ function Blog(): React.ReactElement {
   return (
     <div className={styles.container}>
         <div className={styles.left}>
-            <h1 className={styles.title}>Today's News</h1>
+            <h1 className={styles.title}>Today&apos;s News</h1>
             <div className={styles.child}>
                 {tab.map((item, index) => (
                     <BlogCard key={index} />
