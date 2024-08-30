@@ -4,9 +4,14 @@ import BlogCard from '@/components/core/cards/blog/BlogCard';
 import Card from '@/components/core/cards/side/Card';
 import Link from 'next/link';
 import { FaArrowRight } from 'react-icons/fa6';
+import { getPost } from '@/lib/calls';
 
-function Blog(): React.ReactElement {
-    const tab:number[] = [1, 2, 3, 4, 5, 6];
+async function Blog() {
+    const tab:number[] = [1, 2, 3, 4, 5];
+    const posts:dataProps[] = await getPost('today');
+    const latest:dataProps[] = await getPost('latest');
+    
+
   return (
     <div className={styles.container}>
         <div className={styles.left}>
@@ -19,7 +24,7 @@ function Blog(): React.ReactElement {
             </div>
             <div className={styles.child}>
                 {tab.map((item, index) => (
-                    <BlogCard key={index} />
+                    <BlogCard key={index} data={posts} />
                 ))}
             </div>
         </div>
@@ -27,7 +32,7 @@ function Blog(): React.ReactElement {
             <h1 className={styles.title}>Latest Updates</h1>
             <div className={`${styles.child} ${styles.col}`}>
                 {tab.map((item, index) => (
-                    <Card key={index} />
+                    <Card key={index} data={latest}/>
                 ))}
             </div>
         </div>

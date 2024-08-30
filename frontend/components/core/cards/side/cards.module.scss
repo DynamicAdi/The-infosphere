@@ -2,13 +2,16 @@
 
 .box {
   width: 25rem;
-  height: 10rem;
+  height: 9.7rem;
   cursor: pointer;
-  border-radius: $md;
+  // border-radius: $md;
   position: relative;
   overflow: hidden;
 
   &:hover {
+    .textContainer {
+      transform: translateY(30%);
+    }
     img {
       transform: scale(1.1);
     }
@@ -39,12 +42,14 @@
   .textContainer {
     position: absolute;
     bottom: 0;
-    border-radius: 0px $sm 0px $sm;
-    width: 60%;
-    height: 40%;
-    background-color: rgba($color: $black, $alpha: 0.4);
-    backdrop-filter: blur(5px);
+    // border-radius: 0px $sm 0px $sm;
+    width: 100%;
+    height: 100%;
+    transform: translateY(60%);
+    background-color: rgba($color: #000039, $alpha: 0.5);
+    backdrop-filter: blur(2px);
     padding: 0.3rem 0.5rem;
+    transition: 0.3s all ease;
 
     h1 {
       font-size: 1.2rem;

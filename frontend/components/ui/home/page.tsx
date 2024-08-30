@@ -3,11 +3,12 @@ import styles from './styles.module.scss';
 import Navbar from '@/components/core/navbar/page';
 import FadeCarousel from '../MenuCard/page';
 import ScrollingHeadlines from '../headlines/page';
-import logo from '@/public/wideLogo.webp';
+import logo from '@/public/logo.jpg';
+import { getPost } from '@/lib/calls';
+import { dataProps } from '@/lib/types';
 
-
-function HomeSection() {
-  // const news = [1, 2, 3, 4, 5]
+async function HomeSection() {
+  const posts = (await getPost('banner')) as dataProps[];
   return (
     <div className={styles.container}>
     <div className={styles.upperSection}>
@@ -22,7 +23,7 @@ function HomeSection() {
 
         <div className={styles.child}>
             <Navbar />
-            <FadeCarousel />
+            <FadeCarousel data={posts} />
         </div>
     </div>
   )

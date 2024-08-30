@@ -4,6 +4,7 @@
 .container {
     @include fullScreen();
     @include flex(space-between, flex-start);
+    height: auto;
     @include media(mobile) {
         flex-direction: column;
         height: auto;
@@ -28,6 +29,7 @@
         }
         .title {
                 // padding: 1%;
+                color: $secondary;
                 padding-left: 10%;
                 position: relative;
                 width: fit-content;
@@ -40,7 +42,7 @@
                     left: -10%;
                     width: 35%;
                     height: 10%;
-                    background: #000;
+                    background: $primary;
                     @include media(mobile) {
                         width: 20%;
                     }

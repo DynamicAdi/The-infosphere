@@ -1,7 +1,9 @@
 import React from 'react'
 import styles from './cards.module.scss'
 
-function Card() {
+function Card({data}: {
+  data: dataProps[],
+}) {
   return (
     <div className={styles.box}>
         <img src="https://fastly.picsum.photos/id/350/1080/1920.jpg?hmac=wH6dXhIEq_wpWvnDhtJqhGbhPt_h-g9rN7CL9b58udU" alt="image" />
