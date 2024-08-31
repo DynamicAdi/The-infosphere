@@ -4,6 +4,9 @@
   overflow-x: hidden; // - gd
   @include fullScreen($h: auto);
   // padding-bottom: 2%;
+  @include media(mobile) {
+    margin-top: 2%;
+  }
   .title {
     margin-top: 0.5%;
     padding-left: 8%;
@@ -35,5 +38,8 @@
     padding: 1% 2%;
     @include flex(flex-start);
     gap: 0.5rem;
+    @include media(mobile) {
+      @include flex(center);
+    }
   }
 }

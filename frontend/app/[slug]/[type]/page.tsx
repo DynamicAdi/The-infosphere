@@ -17,14 +17,15 @@ async function Slug({
 }: {
   params: { slug: string, type: string };
 }) {;
-  console.log(params);
   
   const posts = await getPost("full", params.slug, params.type);
   const today: dataProps[] = await getPost("today");
 
   return (
     <div className={styles.main}>
-      <UpperSection />
+    <div className={styles.logo}>
+      {/* <UpperSection /> */}
+    </div>
       <div className={styles.parent}>
         <div className={styles.container}>
           <div className={styles.main}>
@@ -43,11 +44,7 @@ async function Slug({
             </h1>
             <h1>{posts[0].title}</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
-              sunt numquam ab, harum eius maxime amet ut labore nostrum qui
-              accusantium tenetur vel obcaecati dolorem alias. Deserunt
-              voluptatum, adipisci libero reiciendis commodi, similique id
-              facilis voluptatem maiores quae debitis tempora?
+              {posts[0].description}
             </p>
 
             <div className={styles.catogeries}>

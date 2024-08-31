@@ -4,11 +4,12 @@
     @include fullScreen();
     @include flex();
     @include media(mobile) {
-        @include flex(center, center, column);
+        @include flex(flex-start, center, column);
         height: 75vh;
+        // background-color: red
     }
     .child {
-        @include fullRatio(97%, 85%);
+        @include fullRatio(98%, 85%);
         border-radius: $sm;
         overflow: hidden;
         position: relative;
@@ -16,7 +17,7 @@
         @include media(mobile) {
             width: 95%;
             height: 80%;
-            margin-top: 3%;
+            margin-top: 1%;
         }
     }
 }

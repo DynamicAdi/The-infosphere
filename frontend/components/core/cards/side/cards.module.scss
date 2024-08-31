@@ -7,7 +7,9 @@
   // border-radius: $md;
   position: relative;
   overflow: hidden;
-
+  @include media(mobile) {
+    width: 23rem;
+  }
   &:hover {
     .textContainer {
       transform: translateY(30%);

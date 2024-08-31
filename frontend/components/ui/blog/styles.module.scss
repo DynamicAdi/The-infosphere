@@ -35,6 +35,9 @@
                 width: fit-content;
                 font-size: 2.5rem;
                 line-height: 100%;
+                @include media(mobile) {
+                    font-size: 1.8rem;
+                }
                 &::before {
                     content: '';
                     position: absolute;
