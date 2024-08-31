@@ -1,21 +1,29 @@
-import React from 'react'
-import styles from './cards.module.scss'
+import React from "react";
+import styles from "./cards.module.scss";
+import { dataProps } from "@/lib/types";
+import { urlFor } from "@/lib/client";
+import LinkMe from "../../linkBtn/page";
 
-function Card({data}: {
-  data: dataProps[],
-}) {
+function Card({ data }: { data: dataProps[] }) {
   return (
-    <div className={styles.box}>
-        <img src="https://fastly.picsum.photos/id/350/1080/1920.jpg?hmac=wH6dXhIEq_wpWvnDhtJqhGbhPt_h-g9rN7CL9b58udU" alt="image" />
-       <div className={styles.tags}>
-        <p>Politics</p>
-        <p>Tags</p>
-        </div>
-        <div className={styles.textContainer}>
-            <h1>I am the title of the page</h1>
-        </div>
-    </div>
-  )
+    <>
+      {data.slice(0, 5).map((cardItem) => (
+        <LinkMe type={cardItem._type} name={cardItem.slug.current} key={cardItem.slug.current}>
+          <div className={styles.box}>
+            <img src={urlFor(cardItem.mainImage).url()} alt={cardItem.title} />
+            <div className={styles.tags}>
+              {cardItem.categories.map((items: string, index: number) => (
+                <p key={index}>{items}</p>
+              ))}
+            </div>
+            <div className={styles.textContainer}>
+              <h1>{cardItem.title}</h1>
+            </div>
+          </div>
+        </LinkMe>
+      ))}
+    </>
+  );
 }
 
-export default Card
+export default Card;

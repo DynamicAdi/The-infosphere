@@ -1,11 +1,10 @@
 // All the GROQ queries are executed from the server
 
-export const initBanner = `*[ _type=="main" ]{title, metadescription, mainImage, author, categories, _createdAt, slug}`
-export const initToday = `*[ _type=="today" ]{title, metadescription, mainImage, author, categories, _createdAt, slug}`
-export const initFeatured = `*[ _type=="featured" ]{title, metadescription, mainImage, author, categories, _createdAt, slug}`
-export const initLatest = `*[ _type=="post" ]{title, metadescription, mainImage, author, categories, _createdAt, slug}`
+export const initBanner = `*[ _type=="main" ]{title, metadescription, mainImage, categories, _createdAt, _type, slug, author->{ name, bio}}`;
+export const initToday = `*[ _type=="today" ]{title, metadescription, mainImage, categories, _createdAt, _type, slug, author->{ name, bio}}`;
+export const initFeatured = `*[ _type=="featured" ]{title, metadescription, mainImage, categories, _createdAt, _type, slug, author->{ name, bio}}`;
+export const initLatest = `*[ _type=="post" ]{title, metadescription, mainImage, categories, _createdAt, _type, slug, author->{ name, bio}}`;
+export const initFeeds = `*[ _type=="morenews" ]{title, mainImage, _createdAt, _type, slug, author->{ name, bio}}`;
 
-
-// export const init = `*[ _type=="post" ]{title, metadescription, mainImage, author, author, _createdAt, _id}`
-
-// export const internalPosts = `*[ _type=="post" ]`
+// Full page Data
+export const FullLatest = `*[ _type=="post" && slug.current == $slug ]`;

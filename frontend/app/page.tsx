@@ -1,8 +1,8 @@
 import Loader from "@/components/core/loader/page";
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import dynamic from "next/dynamic";
 
-const HomeSection = dynamic(() => import('@/components/ui/home/page'), {ssr: true})
+const HomeSection = dynamic(() => import('@/components/ui/home/page'), {ssr: true, loading: () => <Loader /> }) 
 const Blog = dynamic(() => import('@/components/ui/blog/page'), {ssr: true})
 const Featured = dynamic(() => import('@/components/ui/featured/page'), {ssr: true})
 const MoreNews = dynamic(() => import('@/components/ui/images/page'), {ssr: true})
@@ -12,11 +12,13 @@ export default async function Home() {
 
   return (
     <Suspense fallback={<Loader />}>
+
       <HomeSection />
       <Blog />
       <Featured />
       <MoreNews />
       <Footer />
+
     </Suspense>
   );
 }

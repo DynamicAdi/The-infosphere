@@ -33,7 +33,7 @@
     width: 100%;
     // height: 90%;
     padding: 1% 2%;
-    // @include flex();
-    // gap: 1rem;
+    @include flex(flex-start);
+    gap: 0.5rem;
   }
 }

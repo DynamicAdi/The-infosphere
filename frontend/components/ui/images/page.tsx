@@ -3,54 +3,29 @@ import styles from "./styles.module.scss";
 import Overlay from "@/components/core/cards/overlay/page";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
+import { dataProps } from "@/lib/types";
+import { getPost } from "@/lib/calls";
+import { urlFor } from "@/lib/client";
+import LinkMe from "@/components/core/linkBtn/page";
 
 
-function MoreNews() {
-  const obj:any = [
-    {
-      id: 1,
-      img: 'https://picsum.photos/1080/1920?random=1',
-      title: "Product title",
-    },
-    {
-      id: 2,
-      img: 'https://picsum.photos/1080/1920?random=2',
-      title: "Product title",
-    },
-    {
-      id: 3,
-      img: 'https://picsum.photos/1080/1920?random=3',
-      title: "Product title",
-    },
-    {
-      id: 4,
-     img: 'https://picsum.photos/1080/1920?random=4',
-      title: "Product title",
-    },
-    {
-      id: 5,
-     img: 'https://picsum.photos/1080/1920?random=5',
-      title: "Product title",
-    },
-    {
-      id: 6,
-     img: 'https://picsum.photos/1080/1920?random=6',
-      title: "Product title",
-    },
-  ];
-  
+async function MoreNews() {
+  const posts:dataProps[] = await getPost('feeds');
+
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-      <h1>What you have missed!</h1>
+      <h1>More Feeds</h1>
       <Link href="/featured-news">
         <p>View all</p>
         <FaArrowRight size={26} />
       </Link>
       </div>
       <div className={styles.child}>
-        {obj.map((item:any) => (
-        <Overlay key={item.id} id={item.id} image={item.img} title={item.title} />         
+        {posts.slice(0, 8).map((item:dataProps) => (
+      <LinkMe type={item._type} name={item.slug.current} key={item.slug.current}>
+        <Overlay key={item._createdAt} image={urlFor(item.mainImage).url()} title={item.title} />         
+       </LinkMe>
         ))}
       </div>
     </div>

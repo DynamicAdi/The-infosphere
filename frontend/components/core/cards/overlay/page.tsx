@@ -1,9 +1,8 @@
 import React from 'react'
 import styles from './styles.module.scss'
 
-function Overlay({id, image, title}: {
-    id: number,
-    image: string,
+function Overlay({ image, title}: {
+    image: any,
     title: string,
 }) {
 
