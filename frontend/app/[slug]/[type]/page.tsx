@@ -24,7 +24,7 @@ async function Slug({
   return (
     <div className={styles.main}>
     <div className={styles.logo}>
-      {/* <UpperSection /> */}
+   <UpperSection /> 
     </div>
       <div className={styles.parent}>
         <div className={styles.container}>

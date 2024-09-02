@@ -1,33 +1,29 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import Link from "next/link";
+import LinkMe from "@/components/core/linkBtn/page";
+import { dataProps } from "@/lib/types";
 
-const ScrollingHeadlines = () => {
-  const headlines = [
-    "Headline 1",
-    "Headline 2",
-    "Headline 3",
-    "Headline 4",
-    "Headline 5",
-  ];
 
+const ScrollingHeadlines = ({title}: {title: any}) => {
+  console.log(title);
+  
   return (
 <div className={styles.scrolling_container}>
       <div className={styles.scrolling_content}>
-        {headlines.map((headline, index) => (
-        // <Link href={'/news'} key={index}>
-        <Link href={'/news'} key={index} className={styles.headline}>
-            {headline}
-          </Link>
-        // </Link>
+        {title.map((headline:dataProps, index:number) => (
+        <LinkMe type={headline._type} name={headline.slug.current} key={index}>
+            {headline.title}
+          </LinkMe>
         ))}
-        {headlines.map((headline, index) => (
-        // <Link href={'/news'} key={index}>
-          <Link href={'/news'} key={index + headlines.length} className={styles.headline}>
-            {headline}
-          </Link>
-        // </Link>
+
+{title.map((headline:dataProps, index:number) => (
+        <LinkMe type={headline._type} name={headline.slug.current} key={index}>
+            {headline.title}
+          </LinkMe>
         ))}
+        
+
       </div>
     </div>
   );

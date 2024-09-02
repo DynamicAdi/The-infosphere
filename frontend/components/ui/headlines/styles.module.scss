@@ -6,7 +6,7 @@
     white-space: nowrap;
     position: relative;
   }
-  
+
   .scrolling_content {
     display: inline-block;
     animation: horizontal_scroll 20s linear infinite;
@@ -23,16 +23,13 @@
           transform: translateX(-50%);
         }
       }
-  }
-  
-  .headline {
-    display: inline-block;
-    margin-right: 50px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    color: white;
-    text-decoration: none;
-  }
-  
-  
+      a {
+          display: inline-block;
+          margin-right: 50px;
+          font-size: 1.5rem;
+          font-weight: bold;
+          cursor: pointer;
+          color: white;
+          text-decoration: none;
+        }
+    }

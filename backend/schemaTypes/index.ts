@@ -6,5 +6,6 @@ import mainpost from './mainpost'
 import today from './today'
 import featured from './featured'
 import moreNews from './moreNews'
+import headlines from './headlines'
 
-export const schemaTypes = [Latestpost, author, category, blockContent, mainpost, today, featured, moreNews]
+export const schemaTypes = [headlines, Latestpost, author, category, blockContent, mainpost, today, featured, moreNews]

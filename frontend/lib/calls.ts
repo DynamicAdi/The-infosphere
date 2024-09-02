@@ -11,7 +11,7 @@ DESIGNER - ADARSH PANDIT
 
 import { groq } from "next-sanity";
 import { client } from "./client" // initalizes the client
-import { initBanner, initToday, initFeatured, initLatest, initFeeds } from "./query" // Stored in different file to write all queries at one place.
+import { initBanner, initToday, initFeatured, initLatest, initFeeds, initHeadlines } from "./query" // Stored in different file to write all queries at one place.
 
 export const getPost = async (action:string, cat?:string, slug?:string) => {
     let query;
@@ -30,6 +30,9 @@ export const getPost = async (action:string, cat?:string, slug?:string) => {
     }
     else if (action === 'feeds') {
         query = initFeeds
+    }
+    else if (action === 'headlines') {
+        query = initHeadlines
     }
     else if (action === 'full') {
         query = groq`*[_type == "${cat}" && slug.current == "${slug}"]{..., author-> {name, bio}}`
