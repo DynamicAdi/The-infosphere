@@ -7,7 +7,7 @@ import LinkMe from "../../linkBtn/page";
 function Card({ data }: { data: dataProps[] }) {
   return (
     <>
-      {data.slice(0, 5).map((cardItem) => (
+      {data.slice(0, 6).map((cardItem) => (
         <LinkMe type={cardItem._type} name={cardItem.slug.current} key={cardItem.slug.current}>
           <div className={styles.box}>
             <img src={urlFor(cardItem.mainImage).url()} alt={cardItem.title} />
