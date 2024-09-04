@@ -23,9 +23,14 @@ async function MoreNews() {
       </div>
       <div className={styles.child}>
         {posts.slice(0, 8).map((item:dataProps) => (
+        <>
       <LinkMe type={item._type} name={item.slug.current} key={item.slug.current}>
         <Overlay key={item._createdAt} image={urlFor(item.mainImage).url()} title={item.title} />         
        </LinkMe>
+        <LinkMe type={item._type} name={item.slug.current} key={item.slug.current}>
+        <Overlay key={item._createdAt} image={urlFor(item.mainImage).url()} title={item.title} />         
+       </LinkMe>
+       </>
         ))}
       </div>
     </div>
