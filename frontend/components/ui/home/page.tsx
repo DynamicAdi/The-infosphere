@@ -5,14 +5,15 @@ import FadeCarousel from '../MenuCard/page';
 import { getPost } from '@/lib/calls';
 import { dataProps } from '@/lib/types';
 import UpperSection from '@/components/core/upperSection/page';
+import Header from '@/components/core/header/page';
 
 async function HomeSection() {
   const posts:dataProps[] = await getPost('banner');
   return (
     <div className={styles.container}>
-      <UpperSection />
-        <div className={styles.child}>
-            <Navbar />
+      {/* <UpperSection /> */}
+      <Header />
+              <div className={styles.child}>
             <FadeCarousel data={posts} />
         </div>
     </div>

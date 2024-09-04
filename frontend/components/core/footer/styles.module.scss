@@ -1,91 +1,141 @@
 @import "../../ui/scss/global";
 
-.footer {
+.mainFooter {
+  width: 100%;
+  height: 23rem;
   background-color: $secondary;
   color: white;
-  padding: 20px;
-  height: 21rem;
-  @include flex($fd: column);
-  gap: 0.1rem;
+  text-align: center;
+  padding: 1rem;
+  z-index: 2;
+  @include flex(space-between, flex-start, column);
+
   @include media(mobile) {
-    flex-direction: column;
     height: auto;
+    gap: 1rem;
   }
-  .png {
-    width: 4rem;
-    height: 4rem;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50px;
+  .containers {
+    width: 100%;
+    height: 30%;
+    h1 {
+        text-align: left;
+        font-size: 4rem;
+        @include media(mobile) {
+            font-size: 2.5rem
+        }
     }
-  }
-  .box {
-    width: 50%;
-    height: 20%;
-    @include flex();
-    @include media(mobile) {
-      width: 100%;
-    }
-    a {
-        text-decoration: none;
-        // text-align: center;
-        .logo {
-            font-size: 3rem;
-            font-weight: bold;
-            // text-align: center;
+    // background-color: red;
+
+    &.trend {
+        @include flex(flex-start, flex-start, column);
+        gap: 0.7rem;
+      ul {
+        margin-left: 2%;
+        @include flex(flex-start, flex-start);
+        gap: 1rem;
+        @include media(mobile) {
+            flex-direction: column;
+        }
+        a {
+            font-size: 1.3rem;
+            text-decoration: 1px underline;
             color: white;
+            border-bottom: 1px solid currentColor;
+            transition: 0.1s all ease-out;
+            &:hover {
+                transform: scale(0.9)
+            }
             @include media(mobile) {
-              font-size: 2.5rem;
-              text-align: center;
+                font-size: 1rem;
+                text-align-last: left;
             }
         }
+      }
     }
-    &.social {
-      ul {
-        @include flex();
-        gap: 20px;
-        list-style: none;
+    &.lower {
+        margin-top: 1%;
+      @include flex(space-between, flex-start);
         @include media(mobile) {
-          // @include flex(flex-start, flex-start, column);
-          gap: 15px;
+            // @include flex($fd: column);
+            gap: 1rem;
+            flex-direction: column;
         }
-        li {
-            font-size: 1.2rem;
-          cursor: pointer;
-          transition: 0.3s all ease;
-          &:hover {
-            color: $primary;
-            margin-top: -5px;
-            transform: scale(0.9);
-        }
-        }
+      .content {
+        width: 15%;
+        height: 100%;
+        a {
+          height: 90%;
+          width: fit-content;
+          @include media(mobile) {
+            height: 55%;
+          }
+          .logo {
+            width: 100%;
+            height: 100%;
+            border-radius: 100px;
+            border-radius: 100px;
 
-        .links {
+            @include media(mobile) {
+              width: 100%;
+              height: 100%;
+            }
+
+            img {
+              height: 100%;
+              width: 100%;
+              object-fit: contain;
+              border-radius: 100px;
+            }
+          }
+        }
+      }
+      .social {
+        @include flex(flex-start, flex-start, column);
+        gap: 8px;
+        ul {
           @include flex();
-          border-radius: 50px;
-          padding: 0.6rem;
-          font-size: 35px;
-          transition: 0.3s all ease;
-          cursor: pointer;
-          color: white;
-          background: white;
-          &:nth-child(1) {
-            color: #206aff;
+          gap: 20px;
+          list-style: none;
+          @include media(mobile) {
+            @include flex(flex-start, flex-start);
+            gap: 15px;
           }
-          &:nth-child(2) {
-            color: deeppink;
-          }
-          &:nth-child(3) {
-            color: black;
-          }
-          &:nth-child(4) {
-            color: red;
+          li {
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.3s all ease;
+            &:hover {
+              color: $primary;
+              margin-top: -5px;
+              transform: scale(0.9);
+            }
           }
 
-          &:hover {
-            transform: scale(0.9);
+          .links {
+            @include flex();
+            border-radius: 50px;
+            padding: 0.6rem;
+            font-size: 35px;
+            transition: 0.3s all ease;
+            cursor: pointer;
+            color: white;
+            background: white;
+            &:nth-child(1) {
+              color: #206aff;
+            }
+            &:nth-child(2) {
+              color: deeppink;
+            }
+            &:nth-child(3) {
+              color: black;
+            }
+            &:nth-child(4) {
+              color: red;
+            }
+
+            &:hover {
+              transform: scale(0.9);
+            }
           }
         }
       }

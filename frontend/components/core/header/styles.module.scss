@@ -1,0 +1,14 @@
+@import '../../ui/scss/global';
+
+.header {
+    width: 100%;
+    height: 7rem;
+    @include flex(space-between, center, column);
+    .lower {
+        
+            width: 100%;
+            height: 40%;
+            background-color: $primary;
+            @include flex();
+    }
+}

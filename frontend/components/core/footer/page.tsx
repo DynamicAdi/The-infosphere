@@ -1,28 +1,44 @@
-import React from 'react'
-import styles from './styles.module.scss';
-import { FaInstagram, FaXTwitter, FaYoutube } from 'react-icons/fa6';
-import { FaFacebook } from 'react-icons/fa';
+import React from "react";
+import styles from "./styles.module.scss";
+import Link from "next/link";
+import {FaFacebook, FaInstagram, FaXTwitter, FaYoutube } from 'react-icons/fa6';
 import logo from '@/public/logo.jpg';
+import { dataProps } from "@/lib/types";
+import { getPost } from "@/lib/calls";
+import LinkMe from "../linkBtn/page";
 
-function Footer() {
-    const tabs = ['Home', 'Latest news', 'Politics' ,'Sports', 'Viral', 'Entertainment', 'Video News']
+async function Footer() {
+    const posts:dataProps[] = await getPost('headlines');
+
   return (
-    <footer className={styles.footer}>
-        <div className={styles.png}>
-                <img src={logo.src} alt="" />
-            </div>
-        <div className={styles.box}>
-            <a href="/" target="_blank" rel="noopener noreferrer">
-            <h1 className={styles.logo}>The Rajdharma News</h1>
-            </a>
-        </div>
-        <div className={`${styles.box} ${styles.social}`}>
+    <div className={styles.mainFooter}>
+      <div className={styles.containers}>
+        <h1>The Raj Dharma News</h1>
+      </div>
+      <div className={`${styles.containers} ${styles.trend}`}>
+        <h2>Trending Headlines</h2>
         <ul>
-               {tabs.map(tab => <li key={tab}>{tab}</li>)}
-            </ul>
+        {posts.map((headline:dataProps, index:number) => (
+        <LinkMe type={headline._type} name={headline.slug.current} key={index}>
+        {headline.title}
+          </LinkMe>
+          ))}
+        </ul>
+      </div>
+
+{/* 3rd container */}
+      <div className={`${styles.containers} ${styles.lower}`}>
+        <div className={styles.content}>
+          <Link href={"/"}>
+            <div className={styles.logo}>
+              <img src={logo.src} alt={"logo"} />
+            </div>
+          </Link>
         </div>
-        <div className={`${styles.box} ${styles.social}`}>
-            <ul>
+
+        <div className={styles.social}>
+            <h2>Social media</h2>
+        <ul>
                 <li className={styles.links}><FaFacebook /></li>
                 <li className={styles.links}><FaInstagram /></li>
                 <li className={styles.links}><FaXTwitter /></li>
@@ -30,8 +46,21 @@ function Footer() {
             </ul>
         </div>
 
-  </footer>
-  )
+        <div className={styles.social}>
+        <h2>Quick links</h2>
+        <ul>
+               <li>Home</li>
+               <li>About</li>
+               <li>Latest news</li>
+               <li>Today update</li>
+               <li>More Feeds</li>
+               <li>Contact us</li>
+            </ul>
+        </div>
+
+      </div>
+    </div>
+  );
 }
 
-export default Footer
+export default Footer;

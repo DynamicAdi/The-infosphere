@@ -2,14 +2,16 @@
 
 .container {
     @include fullScreen();
-    @include flex();
+    @include flex(space-between, center, column);
+    padding-bottom: 1rem;
+    gap: 0rem;
     @include media(mobile) {
         @include flex(flex-start, center, column);
         height: 80vh;
         // background-color: red
     }
     .child {
-        @include fullRatio(98%, 89%);
+        @include fullRatio(98%, 83%);
         border-radius: $sm;
         overflow: hidden;
         position: relative;

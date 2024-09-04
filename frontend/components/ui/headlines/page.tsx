@@ -6,7 +6,7 @@ import { dataProps } from "@/lib/types";
 
 
 const ScrollingHeadlines = ({title}: {title: any}) => {
-  
+  // const data:string[] = ['headline 1', 'headline 2', 'headline 3', 'headline 4', 'headline 5', 'headline 6']
   return (
 <div className={styles.scrolling_container}>
       <div className={styles.scrolling_content}>
@@ -18,9 +18,9 @@ const ScrollingHeadlines = ({title}: {title: any}) => {
 
 {title.map((headline:dataProps, index:number) => (
         <LinkMe type={headline._type} name={headline.slug.current} key={index}>
-            {headline.title}
+        {headline.title}
           </LinkMe>
-        ))}
+          ))}
         
 
       </div>

@@ -4,12 +4,12 @@ import styles from "./styles.module.scss";
 import Image from "next/image";
 import { urlFor } from "@/lib/client";
 import RichText from "@/components/core/portable/page";
-import UpperSection from "@/components/core/upperSection/page";
 import Card from "@/components/core/cards/side/Card";
 import { dataProps } from "@/lib/types";
 import Featured from "@/components/ui/featured/page";
-import Footer from "@/components/core/footer/page";
+// import Footer from "@/components/core/footer/page";
 import { useRouter } from "next/router";
+import Header from "@/components/core/header/page";
 // import { useSearchParams } from "next/navigation";
 
 async function Slug({
@@ -23,9 +23,7 @@ async function Slug({
 
   return (
     <div className={styles.main}>
-    <div className={styles.logo}>
-   <UpperSection /> 
-    </div>
+   <Header /> 
       <div className={styles.parent}>
         <div className={styles.container}>
           <div className={styles.main}>
@@ -70,7 +68,7 @@ async function Slug({
         </div>
       </div>
       <Featured />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

@@ -38,6 +38,9 @@
         @include flex(flex-start, flex-start);
         gap: 1.2rem;
         row-gap: 0;
+        @include media(mobile) {
+            @include flex($fd: column);
+        }
         a {
         margin-top: 3%;
         // width: 100%;
@@ -47,6 +50,7 @@
         row-gap: 0;
         color: black;
         @include media(mobile) {
+            justify-content: center;
             flex-direction: column;
             align-items: center;
         }
