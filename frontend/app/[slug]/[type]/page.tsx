@@ -48,7 +48,7 @@ async function Slug({
             </p>
 
             <div className={styles.catogeries}>
-              {posts[0].categories.map((items: string, index: number) => (
+              {posts[0].categories?.map((items: string, index: number) => (
                 <div className={styles.catogery} key={index}>
                   {items}
                 </div>
