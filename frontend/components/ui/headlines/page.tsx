@@ -6,7 +6,6 @@ import { dataProps } from "@/lib/types";
 
 
 const ScrollingHeadlines = ({title}: {title: any}) => {
-  console.log(title);
   
   return (
 <div className={styles.scrolling_container}>

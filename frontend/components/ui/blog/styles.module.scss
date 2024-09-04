@@ -60,7 +60,7 @@
             row-gap: 2rem;
             overflow-y: scroll;
             scrollbar-width: none;
-            padding: 1%;
+            // padding: 1%;
             @include media(mobile) {
                 // background-color: black;
                 @include flex();
