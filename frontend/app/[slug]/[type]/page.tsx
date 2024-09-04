@@ -40,7 +40,7 @@ async function Slug({
 
           <div className={styles.content}>
             <h1 className={styles.author}>
-              {posts[0].author.name} • {posts[0]._createdAt.split("T")[0]}
+              {posts[0].author?.name} • {posts[0]._createdAt.split("T")[0]}
             </h1>
             <h1>{posts[0].title}</h1>
             <p>
