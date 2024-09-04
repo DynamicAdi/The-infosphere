@@ -7,8 +7,7 @@ import RichText from "@/components/core/portable/page";
 import Card from "@/components/core/cards/side/Card";
 import { dataProps } from "@/lib/types";
 import Featured from "@/components/ui/featured/page";
-// import Footer from "@/components/core/footer/page";
-import { useRouter } from "next/router";
+import Footer from "@/components/core/footer/page";
 import Header from "@/components/core/header/page";
 // import { useSearchParams } from "next/navigation";
 
@@ -68,7 +67,7 @@ async function Slug({
         </div>
       </div>
       <Featured />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
