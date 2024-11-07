@@ -16,7 +16,18 @@
     }
 
     &:hover {
-        border-color: $secondary;
+        border-color: $primary;
+        // background-color: $secondary;
+        // color: white;
+        // .content {
+        //     h1 {
+        //         color: white;
+        //     }
+        //     p {
+        //         color: white;
+        //     }
+
+        // }
         .image {
             img {
                 transform: scale(1.1);

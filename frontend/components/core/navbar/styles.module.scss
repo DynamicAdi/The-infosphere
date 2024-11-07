@@ -84,7 +84,7 @@ ul {
         cursor: pointer;
         transition: 0.3s all ease;
         &:hover {
-          color: $primary;
+          font-weight: 600;
           margin-top: -5px;
           transform: scale(0.9);
       }
