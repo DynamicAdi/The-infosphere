@@ -7,7 +7,7 @@
     gap: 0rem;
     @include media(mobile) {
         @include flex(flex-start, center, column);
-        height: 80vh;
+        // height: 80vh;
         // background-color: red
     }
     .child {

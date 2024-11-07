@@ -2,8 +2,10 @@
 
 .mainFooter {
   width: 100%;
-  height: 23rem;
-  background-color: $secondary;
+  height: auto;
+  gap: 1rem;
+  // background-color: $secondary;
+  background: linear-gradient(165deg, #110000, #b43333);
   color: white;
   text-align: center;
   padding: 1rem;
@@ -16,10 +18,9 @@
   }
   .containers {
     width: 100%;
-    height: 30%;
     h1 {
         text-align: left;
-        font-size: 4rem;
+        font-size: 3rem;
         @include media(mobile) {
             font-size: 2.5rem
         }
@@ -30,7 +31,7 @@
         @include flex(flex-start, flex-start, column);
         gap: 0.7rem;
       ul {
-        margin-left: 2%;
+        // margin-left: 2%;
         @include flex(flex-start, flex-start);
         gap: 1rem;
         @include media(mobile) {
@@ -52,9 +53,8 @@
         }
       }
     }
-    &.lower {
         margin-top: 1%;
-      @include flex(space-between, flex-start);
+      @include flex(space-between, flex-start, column);
         @include media(mobile) {
             // @include flex($fd: column);
             gap: 1rem;
@@ -88,6 +88,7 @@
         }
       }
       .social {
+        margin-top: 1%;
         @include flex(flex-start, flex-start, column);
         gap: 8px;
         ul {
@@ -99,11 +100,10 @@
             gap: 15px;
           }
           li {
-            font-size: 1.2rem;
+            font-size: 1rem;
             cursor: pointer;
             transition: 0.3s all ease;
             &:hover {
-              color: $primary;
               margin-top: -5px;
               transform: scale(0.9);
             }
@@ -113,24 +113,12 @@
             @include flex();
             border-radius: 50px;
             padding: 0.6rem;
-            font-size: 35px;
+            font-size: 28px;
             transition: 0.3s all ease;
             cursor: pointer;
             color: white;
-            background: white;
-            &:nth-child(1) {
-              color: #206aff;
-            }
-            &:nth-child(2) {
-              color: deeppink;
-            }
-            &:nth-child(3) {
-              color: black;
-            }
-            &:nth-child(4) {
-              color: red;
-            }
-
+            background: #ffffff30;
+            backdrop-filter: blur(3px);
             &:hover {
               transform: scale(0.9);
             }
@@ -139,4 +127,4 @@
       }
     }
   }
-}
+

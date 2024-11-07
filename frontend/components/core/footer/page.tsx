@@ -13,7 +13,7 @@ async function Footer() {
   return (
     <div className={styles.mainFooter}>
       <div className={styles.containers}>
-        <h1>The Raj Dharma News</h1>
+        <h1>The InfoSphere</h1>
       </div>
       <div className={`${styles.containers} ${styles.trend}`}>
         <h2>Trending Headlines</h2>
@@ -27,25 +27,7 @@ async function Footer() {
       </div>
 
 {/* 3rd container */}
-      <div className={`${styles.containers} ${styles.lower}`}>
-        <div className={styles.content}>
-          <Link href={"/"}>
-            <div className={styles.logo}>
-              <img src={logo.src} alt={"logo"} />
-            </div>
-          </Link>
-        </div>
-
-        <div className={styles.social}>
-            <h2>Social media</h2>
-        <ul>
-                <li className={styles.links}><FaFacebook /></li>
-                <li className={styles.links}><FaInstagram /></li>
-                <li className={styles.links}><FaXTwitter /></li>
-                <li className={styles.links}><FaYoutube /></li>
-            </ul>
-        </div>
-
+      <div className={`${styles.containers}`}>
         <div className={styles.social}>
         <h2>Quick links</h2>
         <ul>
@@ -56,6 +38,18 @@ async function Footer() {
                <li>More Feeds</li>
                <li>Contact us</li>
             </ul>
+        </div>
+
+        <div className={`${styles.containers}`}>
+        <div className={styles.social}>
+            <h2>Social media</h2>
+        <ul>
+                <li className={styles.links}><FaFacebook /></li>
+                <li className={styles.links}><FaInstagram /></li>
+                <li className={styles.links}><FaXTwitter /></li>
+                <li className={styles.links}><FaYoutube /></li>
+            </ul>
+        </div>
         </div>
 
       </div>

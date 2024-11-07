@@ -39,6 +39,7 @@
     @include flex(flex-start);
     gap: 0.5rem;
     @include media(mobile) {
+      padding: 1%;
       @include flex(center);
     }
   }
