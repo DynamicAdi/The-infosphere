@@ -27,6 +27,21 @@
     }
     // background-color: red;
 
+    .heading {
+      @include flex();
+      gap: 1rem;
+      .logoContainer {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 100%;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
     &.trend {
         @include flex(flex-start, flex-start, column);
         gap: 0.7rem;

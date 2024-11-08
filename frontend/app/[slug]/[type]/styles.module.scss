@@ -4,7 +4,7 @@
     @include fullScreen($h: auto);
   .parent {
     @include flex(space-between, flex-start);
-    padding-right: 4%;
+    // padding-right: 4%;
     width: 100%;
     height: auto;
     @include media(mobile) {
@@ -31,6 +31,7 @@
       .child {
         @include flex(flex-start, flex-start, column);
         gap: 1.4rem;
+        width: 100%;
         @include media(mobile) {
         // @include flex(center, center, column);
         // background-color: black;

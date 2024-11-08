@@ -16,6 +16,7 @@ function Navbar() {
     <div className={styles.logo}>
       <img src={logo.src} alt={"logo"} />
     </div>
+    <h1>The InfoSphere</h1>
   </Link>
 
   <nav className={styles.nav}>
